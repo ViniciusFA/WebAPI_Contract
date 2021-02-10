@@ -795,6 +795,14 @@
           }
         }
       },
+      "OpenAPI.PoGo.Models/1.0.0": {
+        "runtime": {
+          "lib/net452/OpenAPI.PoGo.Models.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "runtime.native.System/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "1.1.0",
@@ -1199,7 +1207,9 @@
           "Microsoft.EntityFrameworkCore": "5.0.3",
           "Microsoft.EntityFrameworkCore.InMemory": "5.0.3",
           "Microsoft.Extensions.PlatformAbstractions": "1.1.0",
+          "Microsoft.OpenApi": "1.2.3",
           "NUnit": "3.13.1",
+          "OpenAPI.PoGo.Models": "1.0.0",
           "Swashbuckle.AspNetCore": "6.0.2"
         },
         "runtime": {
@@ -1647,6 +1657,13 @@
       "sha512": "sha512-vWBvrSelmTYwqHWvO3dA63z7cOpaFR/3nJ9MMVLBkWeaWa7oiglPPm5g1h96B4i2XXqjFexxhR5MyMjmIJYPfg==",
       "path": "nunit/3.13.1",
       "hashPath": "nunit.3.13.1.nupkg.sha512"
+    },
+    "OpenAPI.PoGo.Models/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-POwNA7asdAlpYIVqXT0lRj4EdeayvXF461Va9rmlmrMXKffYy7rQ2uLr0AHnO2fSeUNweqUzf83kCGP/jKJxvg==",
+      "path": "openapi.pogo.models/1.0.0",
+      "hashPath": "openapi.pogo.models.1.0.0.nupkg.sha512"
     },
     "runtime.native.System/4.3.0": {
       "type": "package",

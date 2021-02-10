@@ -1049,6 +1049,15 @@
           "build/_._": {}
         }
       },
+      "OpenAPI.PoGo.Models/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net452/OpenAPI.PoGo.Models.dll": {}
+        },
+        "runtime": {
+          "lib/net452/OpenAPI.PoGo.Models.dll": {}
+        }
+      },
       "runtime.native.System/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -1737,7 +1746,9 @@
           "Microsoft.EntityFrameworkCore": "5.0.3",
           "Microsoft.EntityFrameworkCore.InMemory": "5.0.3",
           "Microsoft.Extensions.PlatformAbstractions": "1.1.0",
+          "Microsoft.OpenApi": "1.2.3",
           "NUnit": "3.13.1",
+          "OpenAPI.PoGo.Models": "1.0.0",
           "Swashbuckle.AspNetCore": "6.0.2"
         },
         "compile": {
@@ -3250,6 +3261,18 @@
         "lib/netstandard2.0/nunit.framework.xml",
         "nunit.3.13.1.nupkg.sha512",
         "nunit.nuspec"
+      ]
+    },
+    "OpenAPI.PoGo.Models/1.0.0": {
+      "sha512": "POwNA7asdAlpYIVqXT0lRj4EdeayvXF461Va9rmlmrMXKffYy7rQ2uLr0AHnO2fSeUNweqUzf83kCGP/jKJxvg==",
+      "type": "package",
+      "path": "openapi.pogo.models/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net452/OpenAPI.PoGo.Models.dll",
+        "openapi.pogo.models.1.0.0.nupkg.sha512",
+        "openapi.pogo.models.nuspec"
       ]
     },
     "runtime.native.System/4.3.0": {
@@ -5873,5 +5896,17 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "O pacote 'OpenAPI.PoGo.Models 1.0.0' foi restaurado usando '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' em vez da estrutura de destino do projeto '.NETCoreApp,Version=v3.1'. Esse pacote pode não ser totalmente compatível com o seu projeto.",
+      "libraryId": "OpenAPI.PoGo.Models",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    }
+  ]
 }

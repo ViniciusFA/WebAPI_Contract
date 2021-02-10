@@ -16,6 +16,7 @@ using WebAPI.Models;
 using System.IO;
 using Microsoft.Extensions.PlatformAbstractions;
 using Swashbuckle.AspNetCore.Swagger;
+using Microsoft.OpenApi.Models;
 
 namespace WebAPI
 {
@@ -35,7 +36,33 @@ namespace WebAPI
             services.AddScoped<DataContext, DataContext>();
             services.AddControllers();
 
-            services.AddSwaggerGen();
+            //services.AddSwaggerGen();
+
+            // Configurando o serviço de documentação do Swagger
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1",
+                    new OpenApiInfo
+                    {
+                        Title = "Web API Contracts",
+                        Version = "v1",
+                        Description = "Web API to process Contracts.",
+                        Contact = new OpenApiContact
+                        {
+                            Name = "Vinicius Andrade",
+                            Email = "vinicius.fontesdeandrade@gmail.com"
+                        }
+                    });
+
+                string caminhoAplicacao =
+                    PlatformServices.Default.Application.ApplicationBasePath;
+                string nomeAplicacao =
+                    PlatformServices.Default.Application.ApplicationName;
+                string caminhoXmlDoc =
+                    Path.Combine(caminhoAplicacao, $"{nomeAplicacao}.xml");
+
+                c.IncludeXmlComments(caminhoXmlDoc);
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -44,10 +71,10 @@ namespace WebAPI
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-            }
+            }                      
 
-            // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.),
-            // specifying the Swagger JSON endpoint.
+            // Ativando middlewares para uso do Swagger
+            app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Web API Contracts");

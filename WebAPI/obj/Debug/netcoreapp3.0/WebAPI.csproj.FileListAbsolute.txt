@@ -97,3 +97,5 @@ C:\Workspace\WebAPI_Contracts\WebAPI_Contract\WebAPI\obj\Debug\netcoreapp3.0\Web
 C:\Workspace\WebAPI_Contracts\WebAPI_Contract\WebAPI\obj\Debug\netcoreapp3.0\WebAPI.genruntimeconfig.cache
 C:\Workspace\WebAPI_Contracts\WebAPI_Contract\WebAPI\obj\Debug\netcoreapp3.0\WebAPI.MvcApplicationPartsAssemblyInfo.cs
 C:\Workspace\WebAPI_Contracts\WebAPI_Contract\WebAPI\obj\Debug\netcoreapp3.0\WebAPI.MvcApplicationPartsAssemblyInfo.cache
+C:\Workspace\WebAPI_Contracts\WebAPI_Contract\WebAPI\bin\Debug\netcoreapp3.0\WebAPI.xml
+C:\Workspace\WebAPI_Contracts\WebAPI_Contract\WebAPI\bin\Debug\netcoreapp3.0\OpenAPI.PoGo.Models.dll

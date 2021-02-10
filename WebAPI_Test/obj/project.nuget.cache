@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "h9+Km7/lUJG6TApj8x2f3M0KJ+PjOxHGZimjly+uzi1rsGPtI7Exl/2bvSpp17rjv5cHWnewZ0WvMmyPwMTQWg==",
+  "dgSpecHash": "j/o3Vlq+y50ZCnzIDUi6XWIyMMB8B1xtYvT285SjI2vsuWu0+4JbLWgmWt5JjRGXQaRsFEXUguhqHo6jxwBN8A==",
   "success": true,
   "projectFilePath": "C:\\Workspace\\WebAPI_Contracts\\WebAPI_Contract\\WebAPI_Test\\WebAPI_Test.csproj",
   "expectedPackageFiles": [
@@ -66,6 +66,7 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\newtonsoft.json\\9.0.1\\newtonsoft.json.9.0.1.nupkg.sha512",
     "C:\\Users\\Vini\\.nuget\\packages\\nuget.frameworks\\5.0.0\\nuget.frameworks.5.0.0.nupkg.sha512",
     "C:\\Users\\Vini\\.nuget\\packages\\nunit\\3.13.1\\nunit.3.13.1.nupkg.sha512",
+    "C:\\Users\\Vini\\.nuget\\packages\\openapi.pogo.models\\1.0.0\\openapi.pogo.models.1.0.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
     "C:\\Users\\Vini\\.nuget\\packages\\swashbuckle.aspnetcore\\6.0.2\\swashbuckle.aspnetcore.6.0.2.nupkg.sha512",
     "C:\\Users\\Vini\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.0.2\\swashbuckle.aspnetcore.swagger.6.0.2.nupkg.sha512",
@@ -116,5 +117,16 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.xml.readerwriter\\4.0.11\\system.xml.readerwriter.4.0.11.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.xml.xdocument\\4.0.11\\system.xml.xdocument.4.0.11.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "O pacote 'OpenAPI.PoGo.Models 1.0.0' foi restaurado usando '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' em vez da estrutura de destino do projeto '.NETCoreApp,Version=v3.1'. Esse pacote pode não ser totalmente compatível com o seu projeto.",
+      "libraryId": "OpenAPI.PoGo.Models",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    }
+  ]
 }
