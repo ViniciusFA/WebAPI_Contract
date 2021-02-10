@@ -2,10 +2,10 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using WebAPI.Controllers;
 
-namespace WebAPI_Test
+namespace WebAPI_UnitTest_Status
 {
     [TestClass]
-    public class UnitTest1
+    public class UnitTest_Status
     {
         [TestMethod]
         public void TestStatus_Baixado()
