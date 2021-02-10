@@ -11,7 +11,7 @@ namespace WebAPI.Controllers
 {
     [ApiController]
     [Route("v1/contracts")]
-    public class ContractControoler : ControllerBase
+    public class ContractControler : ControllerBase
     {
         [HttpGet]
         [Route("")]
@@ -102,9 +102,9 @@ namespace WebAPI.Controllers
             return model;
         }
 
-        public string GetStatus(DateTime DueDate, DateTime CurrentyDate, DateTime PayDate)
+        public string GetStatus(DateTime? DueDate, DateTime? CurrentyDate, DateTime? PayDate)
         {
-            if (PayDate != null)
+            if (PayDate == null)
             {
                 if (DueDate >= CurrentyDate)
                     return "Aberta";
@@ -113,7 +113,6 @@ namespace WebAPI.Controllers
             }
             return "Baixado";
         }
-
         private List<Installments> GetListInstallmentss(int QuantityPlots, List<Installments> listModel)
         {
             List<Installments> listInstallments = new List<Installments>();            

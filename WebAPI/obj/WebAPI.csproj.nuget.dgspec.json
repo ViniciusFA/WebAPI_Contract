@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Workspace\\WebAPI\\WebAPI\\WebAPI.csproj": {}
+    "C:\\Workspace\\WebAPI_Contracts\\WebAPI_Contract\\WebAPI\\WebAPI.csproj": {}
   },
   "projects": {
-    "C:\\Workspace\\WebAPI\\WebAPI\\WebAPI.csproj": {
+    "C:\\Workspace\\WebAPI_Contracts\\WebAPI_Contract\\WebAPI\\WebAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Workspace\\WebAPI\\WebAPI\\WebAPI.csproj",
+        "projectUniqueName": "C:\\Workspace\\WebAPI_Contracts\\WebAPI_Contract\\WebAPI\\WebAPI.csproj",
         "projectName": "WebAPI",
-        "projectPath": "C:\\Workspace\\WebAPI\\WebAPI\\WebAPI.csproj",
+        "projectPath": "C:\\Workspace\\WebAPI_Contracts\\WebAPI_Contract\\WebAPI\\WebAPI.csproj",
         "packagesPath": "C:\\Users\\Vini\\.nuget\\packages\\",
-        "outputPath": "C:\\Workspace\\WebAPI\\WebAPI\\obj\\",
+        "outputPath": "C:\\Workspace\\WebAPI_Contracts\\WebAPI_Contract\\WebAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -29,6 +29,7 @@
         },
         "frameworks": {
           "netcoreapp3.0": {
+            "targetAlias": "netcoreapp3.0",
             "projectReferences": {}
           }
         },
@@ -40,6 +41,7 @@
       },
       "frameworks": {
         "netcoreapp3.0": {
+          "targetAlias": "netcoreapp3.0",
           "dependencies": {
             "Microsoft.AspNetCore.Mvc.DataAnnotations": {
               "target": "Package",
@@ -88,7 +90,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     }
