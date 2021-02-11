@@ -63,6 +63,10 @@
               "target": "Package",
               "version": "[1.1.0, )"
             },
+            "Microsoft.FeatureManagement.AspNetCore": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "Microsoft.OpenApi": {
               "target": "Package",
               "version": "[1.2.3, )"

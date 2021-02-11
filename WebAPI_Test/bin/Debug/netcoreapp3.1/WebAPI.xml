@@ -59,7 +59,7 @@
             or it'll dont delete and return error message
             </returns>
         </member>
-        <member name="M:WebAPI.Controllers.ContractControler.GetStatus(System.Nullable{System.DateTime},System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
+        <member name="M:WebAPI.Controllers.ContractControler.GetStatusAsync(System.Nullable{System.DateTime},System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
             <summary>
             It's a private method to serve this class 
             to fill the Status property
@@ -74,7 +74,7 @@
             if due date or current date has any value
             </returns>
         </member>
-        <member name="M:WebAPI.Controllers.ContractControler.GetListInstallmentss(System.Int32,System.Collections.Generic.List{WebAPI.Models.Installments})">
+        <member name="M:WebAPI.Controllers.ContractControler.GetListInstallmentssAsync(System.Int32,System.Collections.Generic.List{WebAPI.Models.Installments})">
             <summary>
             Get a installments list to populate object Installments 
             related in contract object

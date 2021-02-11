@@ -128,3 +128,5 @@ C:\Workspace\WebAPI_Contracts\WebAPI_Contract\WebAPI_Test\obj\Debug\netcoreapp3.
 C:\Workspace\WebAPI_Contracts\WebAPI_Contract\WebAPI_Test\obj\Debug\netcoreapp3.1\WebAPI_Test.genruntimeconfig.cache
 C:\Workspace\WebAPI_Contracts\WebAPI_Contract\WebAPI_Test\bin\Debug\netcoreapp3.1\OpenAPI.PoGo.Models.dll
 C:\Workspace\WebAPI_Contracts\WebAPI_Contract\WebAPI_Test\bin\Debug\netcoreapp3.1\WebAPI.xml
+C:\Workspace\WebAPI_Contracts\WebAPI_Contract\WebAPI_Test\bin\Debug\netcoreapp3.1\Microsoft.FeatureManagement.dll
+C:\Workspace\WebAPI_Contracts\WebAPI_Contract\WebAPI_Test\bin\Debug\netcoreapp3.1\Microsoft.FeatureManagement.AspNetCore.dll

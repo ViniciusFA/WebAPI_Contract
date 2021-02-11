@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "j/o3Vlq+y50ZCnzIDUi6XWIyMMB8B1xtYvT285SjI2vsuWu0+4JbLWgmWt5JjRGXQaRsFEXUguhqHo6jxwBN8A==",
+  "dgSpecHash": "cKKxRTOd0qTpxyOuVM4aFLctlo8I+gUa7hZcWpYxQ3xgdULSzUcBCOthuXuo7stEG2r4gM9knUdPZ5kUYVvT6w==",
   "success": true,
   "projectFilePath": "C:\\Workspace\\WebAPI_Contracts\\WebAPI_Contract\\WebAPI_Test\\WebAPI_Test.csproj",
   "expectedPackageFiles": [
@@ -40,6 +40,7 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.extensions.configuration\\2.1.1\\microsoft.extensions.configuration.2.1.1.nupkg.sha512",
     "C:\\Users\\Vini\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\2.2.0\\microsoft.extensions.configuration.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\Vini\\.nuget\\packages\\microsoft.extensions.configuration.azureappconfiguration\\4.1.0\\microsoft.extensions.configuration.azureappconfiguration.4.1.0.nupkg.sha512",
+    "C:\\Users\\Vini\\.nuget\\packages\\microsoft.extensions.configuration.binder\\2.1.10\\microsoft.extensions.configuration.binder.2.1.10.nupkg.sha512",
     "C:\\Users\\Vini\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\5.0.1\\microsoft.extensions.dependencyinjection.5.0.1.nupkg.sha512",
     "C:\\Users\\Vini\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\5.0.0\\microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.extensions.dependencymodel\\2.1.0\\microsoft.extensions.dependencymodel.2.1.0.nupkg.sha512",
@@ -53,6 +54,8 @@
     "C:\\Users\\Vini\\.nuget\\packages\\microsoft.extensions.options\\5.0.0\\microsoft.extensions.options.5.0.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.extensions.platformabstractions\\1.1.0\\microsoft.extensions.platformabstractions.1.1.0.nupkg.sha512",
     "C:\\Users\\Vini\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.0\\microsoft.extensions.primitives.5.0.0.nupkg.sha512",
+    "C:\\Users\\Vini\\.nuget\\packages\\microsoft.featuremanagement\\2.2.0\\microsoft.featuremanagement.2.2.0.nupkg.sha512",
+    "C:\\Users\\Vini\\.nuget\\packages\\microsoft.featuremanagement.aspnetcore\\2.2.0\\microsoft.featuremanagement.aspnetcore.2.2.0.nupkg.sha512",
     "C:\\Users\\Vini\\.nuget\\packages\\microsoft.net.http.headers\\2.2.0\\microsoft.net.http.headers.2.2.0.nupkg.sha512",
     "C:\\Users\\Vini\\.nuget\\packages\\microsoft.net.test.sdk\\16.7.1\\microsoft.net.test.sdk.16.7.1.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",

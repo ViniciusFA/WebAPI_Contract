@@ -341,6 +341,11 @@
           }
         }
       },
+      "Microsoft.Extensions.Configuration.Binder/2.1.10": {
+        "dependencies": {
+          "Microsoft.Extensions.Configuration": "2.1.1"
+        }
+      },
       "Microsoft.Extensions.DependencyInjection/5.0.1": {
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection.Abstractions": "5.0.0"
@@ -450,6 +455,29 @@
           "lib/netcoreapp3.0/Microsoft.Extensions.Primitives.dll": {
             "assemblyVersion": "5.0.0.0",
             "fileVersion": "5.0.20.51904"
+          }
+        }
+      },
+      "Microsoft.FeatureManagement/2.2.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Binder": "2.1.10",
+          "Microsoft.Extensions.Logging": "5.0.0"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Microsoft.FeatureManagement.dll": {
+            "assemblyVersion": "2.2.0.0",
+            "fileVersion": "2.2.0.0"
+          }
+        }
+      },
+      "Microsoft.FeatureManagement.AspNetCore/2.2.0": {
+        "dependencies": {
+          "Microsoft.FeatureManagement": "2.2.0"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Microsoft.FeatureManagement.AspNetCore.dll": {
+            "assemblyVersion": "2.2.0.0",
+            "fileVersion": "2.2.0.0"
           }
         }
       },
@@ -1207,6 +1235,7 @@
           "Microsoft.EntityFrameworkCore": "5.0.3",
           "Microsoft.EntityFrameworkCore.InMemory": "5.0.3",
           "Microsoft.Extensions.PlatformAbstractions": "1.1.0",
+          "Microsoft.FeatureManagement.AspNetCore": "2.2.0",
           "Microsoft.OpenApi": "1.2.3",
           "NUnit": "3.13.1",
           "OpenAPI.PoGo.Models": "1.0.0",
@@ -1476,6 +1505,13 @@
       "path": "microsoft.extensions.configuration.azureappconfiguration/4.1.0",
       "hashPath": "microsoft.extensions.configuration.azureappconfiguration.4.1.0.nupkg.sha512"
     },
+    "Microsoft.Extensions.Configuration.Binder/2.1.10": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-anSrDPFjcz6oBQjrul2vSHCg/wOZ2gJc1ZNzm03LtkA9S17x8xnkLaT599uuFnl6JSZJgQy4hoHVzt2+bIDc9w==",
+      "path": "microsoft.extensions.configuration.binder/2.1.10",
+      "hashPath": "microsoft.extensions.configuration.binder.2.1.10.nupkg.sha512"
+    },
     "Microsoft.Extensions.DependencyInjection/5.0.1": {
       "type": "package",
       "serviceable": true,
@@ -1566,6 +1602,20 @@
       "sha512": "sha512-cI/VWn9G1fghXrNDagX9nYaaB/nokkZn0HYAawGaELQrl8InSezfe9OnfPZLcJq3esXxygh3hkq2c3qoV3SDyQ==",
       "path": "microsoft.extensions.primitives/5.0.0",
       "hashPath": "microsoft.extensions.primitives.5.0.0.nupkg.sha512"
+    },
+    "Microsoft.FeatureManagement/2.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-b81oVbTvN5X2NLQE484IjKcGwggvly5LTYhU4YiHgJXl3+FTWSCwjj3m8AgvSEBkhuJHvK867ydhM4+64lpoUw==",
+      "path": "microsoft.featuremanagement/2.2.0",
+      "hashPath": "microsoft.featuremanagement.2.2.0.nupkg.sha512"
+    },
+    "Microsoft.FeatureManagement.AspNetCore/2.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-7EXOEgpsIWkN7BF6P1La6F8+Zw6SBhbeE+iTNDFc540ZicWFMXjuVgyVK1cZ3y0YqLnXba3pkRANUQXPekjx9g==",
+      "path": "microsoft.featuremanagement.aspnetcore/2.2.0",
+      "hashPath": "microsoft.featuremanagement.aspnetcore.2.2.0.nupkg.sha512"
     },
     "Microsoft.Net.Http.Headers/2.2.0": {
       "type": "package",

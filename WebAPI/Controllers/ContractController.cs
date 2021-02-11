@@ -6,6 +6,8 @@ using WebAPI.Models;
 using WebAPI.Data;
 using System;
 using WebAPI.Utilities;
+using Microsoft.FeatureManagement;
+using Microsoft.Extensions.Logging;
 
 namespace WebAPI.Controllers
 {
@@ -13,6 +15,13 @@ namespace WebAPI.Controllers
     [Route("v1/contracts")]
     public class ContractControler : ControllerBase
     {
+        private readonly IFeatureManager _featureManager;
+
+        public ContractControler(ILogger<ContractControler> logger, IFeatureManager featureManager)
+        {
+            _featureManager = featureManager;
+        }
+
 
         /// <summary>
         /// Get the list of contracts registered in the memory cache.
@@ -25,15 +34,21 @@ namespace WebAPI.Controllers
         [Route("")]
         public async Task<ActionResult<List<Contract>>> Get([FromServices] DataContext context)
         {
-            List<Contract> contractList = await context.Contracts
+            List<Contract> contractList = new List<Contract>();
+
+            if (await _featureManager.IsEnabledAsync(MyFeatureFlags.FeatureA))
+            {
+                contractList = await context.Contracts
                                 .Include(x => x.Installments)
                                 .ToListAsync();
-         
-            foreach (var item in contractList)
-            {
-                for(int i = 0; i < item.Installments.Count; i++){
-                    item.Installments[i].Status = GetStatus(item.Installments[i].DueData, item.Installments[i].CurrentyDate,item.Installments[i].PayDate); 
-                }                
+
+                foreach (var item in contractList)
+                {
+                    for (int i = 0; i < item.Installments.Count; i++)
+                    {
+                        item.Installments[i].Status = await GetStatusAsync(item.Installments[i].DueData, item.Installments[i].CurrentyDate, item.Installments[i].PayDate);
+                    }
+                }
             }
 
             return contractList;
@@ -52,14 +67,20 @@ namespace WebAPI.Controllers
         [Route("{id:int}")]
         public async Task<ActionResult<Contract>> GetById([FromServices] DataContext context, int id)
         {
-            Contract contract = await context.Contracts
+            Contract contract = new Contract();
+
+            if (await _featureManager.IsEnabledAsync(MyFeatureFlags.FeatureA))
+            {
+                contract = await context.Contracts
                                 .Include(x => x.Installments)
                                 .AsNoTracking()
                                 .FirstOrDefaultAsync(x => x.Id == id);
-                                
-                 for(int i = 0; i < contract.Installments.Count; i++){
-                    contract.Installments[i].Status = GetStatus(contract.Installments[i].DueData, contract.Installments[i].CurrentyDate,contract.Installments[i].PayDate); 
-                } 
+
+                for (int i = 0; i < contract.Installments.Count; i++)
+                {
+                    contract.Installments[i].Status = await GetStatusAsync(contract.Installments[i].DueData, contract.Installments[i].CurrentyDate, contract.Installments[i].PayDate);
+                }
+            }
 
             return contract;
         }
@@ -82,10 +103,12 @@ namespace WebAPI.Controllers
         {
             if (ModelState.IsValid)
             {
-                if(model.QuantityPlots > 1){
-                    model.Installments = GetListInstallmentss(model.QuantityPlots, model.Installments);
-                }                
-                foreach(var modelInstallments in model.Installments){
+                if (model.QuantityPlots > 1)
+                {
+                    model.Installments = await GetListInstallmentssAsync(model.QuantityPlots, model.Installments);
+                }
+                foreach (var modelInstallments in model.Installments)
+                {
                     context.Installmentss.Add(modelInstallments);
                 }
 
@@ -95,6 +118,7 @@ namespace WebAPI.Controllers
             }
             else
                 return BadRequest(ModelState);
+
         }
 
 
@@ -120,7 +144,7 @@ namespace WebAPI.Controllers
                 await context.SaveChangesAsync();
                 return model;
             }
-            else 
+            else
                 return BadRequest(ModelState);
         }
 
@@ -149,12 +173,12 @@ namespace WebAPI.Controllers
 
                 context.Contracts.Remove(model);
                 await context.SaveChangesAsync();
-                return "Contract" + id  +"successfully deleted.";
+                return "Contract" + id + "successfully deleted.";
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return "Error: " + ex.Message;
-            }          
+            }
         }
 
         /// <summary>
@@ -170,16 +194,20 @@ namespace WebAPI.Controllers
         /// or it'll return message ok if the pay date has any value indepoendente 
         /// if due date or current date has any value
         /// </returns>
-        private string GetStatus(DateTime? DueDate, DateTime? CurrentyDate, DateTime? PayDate)
+        private async Task<string> GetStatusAsync(DateTime? DueDate, DateTime? CurrentyDate, DateTime? PayDate)
         {
-            if (PayDate == null)
+            string message = "";
+            if (await _featureManager.IsEnabledAsync(MyFeatureFlags.FeatureA))
             {
-                if (DueDate >= CurrentyDate)
-                    return "Aberta";
-                else
-                    return "Atrasada";
-            }
-            return "Baixado";
+                if (PayDate == null)
+                {
+                    if (DueDate >= CurrentyDate) message = "Aberta";
+                    else message = "Atrasada";
+                }
+                else message = "Baixado";
+            }          
+
+            return message;
         }
 
         /// <summary>
@@ -192,20 +220,27 @@ namespace WebAPI.Controllers
         /// It'll return installments list to add 30 days to due date if 
         /// quantity of plots is bigger than 1
         /// </returns>
-        private List<Installments> GetListInstallmentss(int QuantityPlots, List<Installments> listModel)
+        private async Task<List<Installments>> GetListInstallmentssAsync(int QuantityPlots, List<Installments> listModel)
         {
-            List<Installments> listInstallments = new List<Installments>();            
-            int AddDays = 0;
+            List<Installments> listInstallments = new List<Installments>();
 
-            for(int i = 0; i < QuantityPlots; i++) {  
-                Installments model = listModel[0];
+            if (await _featureManager.IsEnabledAsync(MyFeatureFlags.FeatureA))
+            {
+                int AddDays = 0;
 
-                if(i > 0){
-                    model.DueData.AddDays(AddDays);
-                    listInstallments.Add(model);
-                    AddDays += 30;
-                }               
+                for (int i = 0; i < QuantityPlots; i++)
+                {
+                    Installments model = listModel[0];
+
+                    if (i > 0)
+                    {
+                        model.DueData.AddDays(AddDays);
+                        listInstallments.Add(model);
+                        AddDays += 30;
+                    }
+                }
             }
+               
             return listInstallments;
         }
     }

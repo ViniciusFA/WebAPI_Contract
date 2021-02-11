@@ -18,16 +18,17 @@ namespace WebAPI
         }
 
 
-        // public static IHostBuilder CreateHostBuilder(string[] args) =>
-        //     Host.CreateDefaultBuilder(args)
-        //         .ConfigureAppConfiguration((hostingContext, config) =>
-        //         {
-        //             var settings = config.Build();
-        //             config.AddAzureAppConfiguration(options =>
-        //             {
-        //                 options.UseFeatureFlags();
-        //             });
-        //         });
+        //public static IHostBuilder CreateHostBuilder(string[] args) =>
+        //Host.CreateDefaultBuilder(args)
+        //    .ConfigureWebHostDefaults(webBuilder =>
+        //        webBuilder.ConfigureAppConfiguration(config =>
+        //        {
+        //            var settings = config.Build();
+        //            config.AddAzureAppConfiguration(options =>
+        //            options.Connect(settings["DefaultConnection "]).UseFeatureFlags(featureFlagOptions => {
+        //            featureFlagOptions.CacheExpirationInterval = TimeSpan.FromMinutes(1);
+        //            }));
+        //        }));
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)

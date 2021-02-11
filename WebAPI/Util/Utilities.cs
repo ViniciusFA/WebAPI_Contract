@@ -5,4 +5,8 @@ namespace WebAPI.Utilities
         FeatureA
     }
 
+    public static class MyFeatureFlags
+    {
+        public const string FeatureA = "FeatureA";
+    }
 }

@@ -17,6 +17,7 @@ using System.IO;
 using Microsoft.Extensions.PlatformAbstractions;
 using Swashbuckle.AspNetCore.Swagger;
 using Microsoft.OpenApi.Models;
+using Microsoft.FeatureManagement;
 
 namespace WebAPI
 {
@@ -35,10 +36,8 @@ namespace WebAPI
             services.AddDbContext<DataContext>(opt => opt.UseInMemoryDatabase("db_contracts"));
             services.AddScoped<DataContext, DataContext>();
             services.AddControllers();
+            services.AddFeatureManagement(Configuration.GetSection("FeatureManagement"));
 
-            //services.AddSwaggerGen();
-
-            // Configurando o serviço de documentação do Swagger
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1",
@@ -71,7 +70,7 @@ namespace WebAPI
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-            }                      
+            }
 
             // Ativando middlewares para uso do Swagger
             app.UseSwagger();
