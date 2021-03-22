@@ -1,5 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using System.Threading.Tasks;
 using WebAPI.Controllers;
 
 namespace WebAPI_UnitTest_Status
@@ -7,13 +8,22 @@ namespace WebAPI_UnitTest_Status
     [TestClass]
     public class UnitTest_Status
     {
+
+        ContractController _contractController;
+
+        [TestInitialize]
+        public void TestInitialize()
+        {
+            _contractController = new ContractController();
+        }
+
         [TestMethod]
         public void TestStatus_Baixado()
         {
             DateTime PayDate = DateTime.Now;
 
-            string result = GetStatus(null, null, PayDate);
-            Assert.IsTrue(result == "Baixado");
+            Task<string> result = _contractController.GetStatusAsync(null, null, PayDate);
+            Assert.IsTrue(result.Result == "Baixado");
         }
 
         [TestMethod]
@@ -22,8 +32,8 @@ namespace WebAPI_UnitTest_Status
             DateTime Duedate = DateTime.Now;
             DateTime CurrentyDate = DateTime.Now;
 
-            string result = GetStatus(Duedate, CurrentyDate, null);
-            Assert.IsTrue(result == "Aberta");
+            Task<string> result = _contractController.GetStatusAsync(Duedate, CurrentyDate, null);
+            Assert.IsTrue(result.Result == "Aberta");
         }
 
         [TestMethod]
@@ -32,20 +42,8 @@ namespace WebAPI_UnitTest_Status
             DateTime Duedate = new DateTime(2021, 02, 02);
             DateTime CurrentyDate = DateTime.Now;
 
-            string result = GetStatus(Duedate, CurrentyDate, null);
-            Assert.IsTrue(result == "Atrasada");
-        }
-
-        public string GetStatus(DateTime? DueDate, DateTime? CurrentyDate, DateTime? PayDate)
-        {
-            if (PayDate == null)
-            {
-                if (DueDate >= CurrentyDate)
-                    return "Aberta";
-                else
-                    return "Atrasada";
-            }
-            return "Baixado";
+            Task<string> result = _contractController.GetStatusAsync(Duedate, CurrentyDate, null);
+            Assert.IsTrue(result.Result == "Atrasada");
         }
 
     }

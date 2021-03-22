@@ -13,15 +13,16 @@ namespace WebAPI.Controllers
 {
     [ApiController]
     [Route("v1/contracts")]
-    public class ContractControler : ControllerBase
+    public class ContractController : ControllerBase, InterfaceController.IContractController
     {
-        private readonly IFeatureManager _featureManager;
+        //private readonly IFeatureManager _featureManager;
 
-        public ContractControler(ILogger<ContractControler> logger, IFeatureManager featureManager)
-        {
-            _featureManager = featureManager;
-        }
+        //public ContractController(IFeatureManager featureManager)
+        //{
+        //    _featureManager = featureManager;
+        //}
 
+        public ContractController() { }
 
         /// <summary>
         /// Get the list of contracts registered in the memory cache.
@@ -36,8 +37,8 @@ namespace WebAPI.Controllers
         {
             List<Contract> contractList = new List<Contract>();
 
-            if (await _featureManager.IsEnabledAsync(MyFeatureFlags.FeatureA))
-            {
+            //if (await _featureManager.IsEnabledAsync(MyFeatureFlags.FeatureA))
+            //{
                 contractList = await context.Contracts
                                 .Include(x => x.Installments)
                                 .ToListAsync();
@@ -49,7 +50,7 @@ namespace WebAPI.Controllers
                         item.Installments[i].Status = await GetStatusAsync(item.Installments[i].DueData, item.Installments[i].CurrentyDate, item.Installments[i].PayDate);
                     }
                 }
-            }
+           // }
 
             return contractList;
         }
@@ -69,8 +70,8 @@ namespace WebAPI.Controllers
         {
             Contract contract = new Contract();
 
-            if (await _featureManager.IsEnabledAsync(MyFeatureFlags.FeatureA))
-            {
+            //if (await _featureManager.IsEnabledAsync(MyFeatureFlags.FeatureA))
+            //{
                 contract = await context.Contracts
                                 .Include(x => x.Installments)
                                 .AsNoTracking()
@@ -80,7 +81,7 @@ namespace WebAPI.Controllers
                 {
                     contract.Installments[i].Status = await GetStatusAsync(contract.Installments[i].DueData, contract.Installments[i].CurrentyDate, contract.Installments[i].PayDate);
                 }
-            }
+            //}
 
             return contract;
         }
@@ -194,20 +195,20 @@ namespace WebAPI.Controllers
         /// or it'll return message ok if the pay date has any value indepoendente 
         /// if due date or current date has any value
         /// </returns>
-        private async Task<string> GetStatusAsync(DateTime? DueDate, DateTime? CurrentyDate, DateTime? PayDate)
+        public  Task<string> GetStatusAsync(DateTime? DueDate, DateTime? CurrentyDate, DateTime? PayDate)
         {
             string message = "";
-            if (await _featureManager.IsEnabledAsync(MyFeatureFlags.FeatureA))
-            {
+            //if (await _featureManager.IsEnabledAsync(MyFeatureFlags.FeatureA))
+            //{
                 if (PayDate == null)
                 {
                     if (DueDate >= CurrentyDate) message = "Aberta";
                     else message = "Atrasada";
                 }
                 else message = "Baixado";
-            }          
+            //}          
 
-            return message;
+            return Task.FromResult(message);
         }
 
         /// <summary>
@@ -220,12 +221,12 @@ namespace WebAPI.Controllers
         /// It'll return installments list to add 30 days to due date if 
         /// quantity of plots is bigger than 1
         /// </returns>
-        private async Task<List<Installments>> GetListInstallmentssAsync(int QuantityPlots, List<Installments> listModel)
+        public async Task<List<Installments>> GetListInstallmentssAsync(int QuantityPlots, List<Installments> listModel)
         {
             List<Installments> listInstallments = new List<Installments>();
 
-            if (await _featureManager.IsEnabledAsync(MyFeatureFlags.FeatureA))
-            {
+            //if (await _featureManager.IsEnabledAsync(MyFeatureFlags.FeatureA))
+            //{
                 int AddDays = 0;
 
                 for (int i = 0; i < QuantityPlots; i++)
@@ -239,7 +240,7 @@ namespace WebAPI.Controllers
                         AddDays += 30;
                     }
                 }
-            }
+            //}
                
             return listInstallments;
         }

@@ -4,7 +4,7 @@
         <name>WebAPI</name>
     </assembly>
     <members>
-        <member name="M:WebAPI.Controllers.ContractControler.Get(WebAPI.Data.DataContext)">
+        <member name="M:WebAPI.Controllers.ContractController.Get(WebAPI.Data.DataContext)">
             <summary>
             Get the list of contracts registered in the memory cache.
             </summary>
@@ -13,7 +13,7 @@
             List of contracts registered in the memory cache
             </returns>
         </member>
-        <member name="M:WebAPI.Controllers.ContractControler.GetById(WebAPI.Data.DataContext,System.Int32)">
+        <member name="M:WebAPI.Controllers.ContractController.GetById(WebAPI.Data.DataContext,System.Int32)">
             <summary>
             Get the list of contracts registered in the memory cache.
             </summary>
@@ -24,7 +24,7 @@
             using the id itself.
             </returns>
         </member>
-        <member name="M:WebAPI.Controllers.ContractControler.Post(WebAPI.Data.DataContext,WebAPI.Models.Contract)">
+        <member name="M:WebAPI.Controllers.ContractController.Post(WebAPI.Data.DataContext,WebAPI.Models.Contract)">
             <summary>
             Save a specified contract.
             </summary>
@@ -36,7 +36,7 @@
             of data annotations required, for example
             </returns>
         </member>
-        <member name="M:WebAPI.Controllers.ContractControler.Put(WebAPI.Data.DataContext,WebAPI.Models.Contract)">
+        <member name="M:WebAPI.Controllers.ContractController.Put(WebAPI.Data.DataContext,WebAPI.Models.Contract)">
             <summary>
             Edit a specified contract .
             </summary>
@@ -48,7 +48,7 @@
             of data annotations required, for example
             </returns>
         </member>
-        <member name="M:WebAPI.Controllers.ContractControler.Delete(WebAPI.Data.DataContext,System.Int32)">
+        <member name="M:WebAPI.Controllers.ContractController.Delete(WebAPI.Data.DataContext,System.Int32)">
             <summary>
             Delete a contract specified using id itself.
             </summary>
@@ -59,7 +59,7 @@
             or it'll dont delete and return error message
             </returns>
         </member>
-        <member name="M:WebAPI.Controllers.ContractControler.GetStatusAsync(System.Nullable{System.DateTime},System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
+        <member name="M:WebAPI.Controllers.ContractController.GetStatusAsync(System.Nullable{System.DateTime},System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
             <summary>
             It's a private method to serve this class 
             to fill the Status property
@@ -74,7 +74,7 @@
             if due date or current date has any value
             </returns>
         </member>
-        <member name="M:WebAPI.Controllers.ContractControler.GetListInstallmentssAsync(System.Int32,System.Collections.Generic.List{WebAPI.Models.Installments})">
+        <member name="M:WebAPI.Controllers.ContractController.GetListInstallmentssAsync(System.Int32,System.Collections.Generic.List{WebAPI.Models.Installments})">
             <summary>
             Get a installments list to populate object Installments 
             related in contract object

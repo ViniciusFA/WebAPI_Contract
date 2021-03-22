@@ -7790,7 +7790,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "O pacote 'OpenAPI.PoGo.Models 1.0.0' foi restaurado usando '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' em vez da estrutura de destino do projeto '.NETCoreApp,Version=v3.0'. Esse pacote pode não ser totalmente compatível com o seu projeto.",
+      "message": "Package 'OpenAPI.PoGo.Models 1.0.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.0'. This package may not be fully compatible with your project.",
       "libraryId": "OpenAPI.PoGo.Models",
       "targetGraphs": [
         ".NETCoreApp,Version=v3.0"
